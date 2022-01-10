@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Try6 {
+    public static void main(String[] args) {
+        System.out.println("Enter a:");
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        System.out.println("Enter b:");
+        int b = scanner.nextInt();
+        int[] arr= new int[20];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=randomGeneration(a,b);
+
+        }
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    public static int randomGeneration(int a, int b) {
+        if (a < b) {
+            int c = (int) (Math.random() * (b - a) + a);
+            return c;
+        }
+        else{
+            int c = (int)(Math.random() * (a-b)+b);
+            return c;
+        }
+    }
+}
